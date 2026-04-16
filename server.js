@@ -5,6 +5,7 @@ import connectDB from './config/db.js';
 import authRoutes from './routes/authRoutes.js';
 import restaurantRoutes from './routes/restaurantRoutes.js';
 import orderRoutes from './routes/orderRoutes.js';
+import uploadRoutes from './routes/uploadRoutes.js';
 
 // Load env vars
 dotenv.config();
@@ -24,6 +25,7 @@ app.use(cors());
 app.use('/api/auth', authRoutes);
 app.use('/api/restaurants', restaurantRoutes);
 app.use('/api/orders', orderRoutes);
+app.use('/api/uploads', uploadRoutes);
 
 app.get('/', (req, res) => {
   res.send('API is running...');
